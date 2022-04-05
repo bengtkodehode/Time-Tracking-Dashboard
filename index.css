@@ -1,0 +1,281 @@
+/* Time tracking dashboard */
+
+
+/* ______________________________________________ */
+
+/* Universal marker - for testing */
+
+/* * {
+    border:1px solid red;
+}   */
+
+/* ______________________________________________ */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    font-family: 'Rubik', sans-serif;
+    background: #0D1323;
+}
+main {
+    min-height: 100vh;
+}
+
+/* _______________________________________________ */
+
+/* Centering the grid layout/ Time tracking dashboard */
+
+main > div {
+    position: absolute;
+    top:  50%;
+    left: 50%;
+    transform:translate(-50%, -49%);
+    width:fit-content;
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 270px);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 35px; 
+}
+
+/* _______________________________________________ */
+
+/* Main card*/
+
+.main-card {
+    background: #1d204b;
+    border-radius: 20px; 
+    grid-row: span 2;
+    display: grid;
+    grid-template-columns: auto;
+}
+
+
+/* Ligth section of main card */
+
+.main-card-info {
+    background: hsl(246, 80%, 60%);
+    border-radius: 20px;
+    padding: 30px 20px 35px 30px;
+   
+}
+.profile-pic {
+    width: 82px;
+    height: 82px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    margin-bottom: 32px; 
+}
+.user-message,
+.user-name {
+    margin: 0;
+    padding: 0;
+}
+.user-message {
+    color: #c3c0ff;
+}
+.user-name {
+    color: #fff;
+    font-weight: 300;
+    line-height: normal;
+    padding-bottom: 10px;
+}
+.last-name {
+    display: block;
+}
+
+
+/* Dark section of main card */
+
+.main-card-time-selector{
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
+    padding: 20px 35px;  
+    color: #767ab9;
+    text-decoration: none;
+    cursor: pointer;
+}
+.main-card-time-selector div:hover {
+    color: #fff;
+}
+.current-click {
+    color: #fff;
+}
+
+/* ________________________________________________ */
+
+/* Activity cards/ tracking card */
+
+
+/* Background colors / background image for each card */
+
+.orange {
+    background: #ff8b64;
+    background-image: url("images/icon-work.svg");
+}
+.blue {
+    background: #56C2E6;
+    background-image: url("images/icon-play.svg");
+}
+.pink {
+    background: #FF5E7D;
+    background-image: url("images/icon-study.svg");
+}
+.green {
+    background: #4BCF83;
+    background-image: url("images/icon-exercise.svg");
+}
+.purple {
+    background: #7235D1;
+    background-image: url("images/icon-social.svg");
+}
+.yellow {
+    background: #F1C75B;
+    background-image: url("images/icon-self-care.svg");
+}
+.orange,
+.blue,
+.pink,
+.green,
+.purple,
+.yellow {
+    background-blend-mode: darken; 
+    background-repeat: no-repeat;
+    background-position: top -1% right 8%;
+}
+.top-section {
+    border-radius: 20px;
+    padding-top: 20px;
+}
+
+/* Activity card - time spent on activity */
+
+.card {
+    background: #1d204b;
+    padding: 32px 30px;
+    border-radius: 20px;
+    margin-top: 30px;
+    color: #fff;
+    transform: translateY(1px) scale(1.005);
+} 
+.card:hover {
+    cursor: pointer;
+    background: #34397B;
+} 
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+} 
+.card-title {
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    font-weight: 400;
+}
+.hours {
+    font-weight: 300;
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+.previous-hours {
+    font-size: 14px;
+    color: #767ab9;
+    line-height: 1px;
+}
+
+/* ______________________________________________________ */
+
+/* Attribution section */
+
+.attribution {
+    margin: 25px auto;
+    font-size: 11px;
+    text-align: center;
+    color: #fff;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+/* _________________________________________________________ */
+
+
+/* Media query - Mobile version */
+
+
+@media (max-width: 1260px) {
+    
+    main > div {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform:translate(-50%);
+    }
+    .container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        width: 375px;
+        margin: 10px auto;
+    }
+
+
+
+    .main-card-info{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 30px;
+    }
+    
+    
+    
+    .card-title {
+        font-size: 1.2rem;
+        font-weight: 400;
+    }
+    .profile-pic{
+        margin: 0;
+    }
+    .last-name {
+        display: inline;
+    }
+    .user-name {
+        font-size: 1.7rem;
+        font-weight: 300;
+        padding: 0;
+    }
+    .user-message {
+        margin-bottom: 0.4em; 
+    }
+    .main-card-time-selector{
+        padding: 20px 0;
+        width: 100%;
+        color: #767ab9;
+        display: flex;
+        justify-content: space-evenly;
+        gap: 5px;
+    }
+
+
+    
+    .time {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+    .hours {
+        font-size: 2.2rem;
+        font-weight: 300;
+        margin: 0;
+    }
+    .previous-hours {
+        font-size: 16px;
+        margin: 0;
+    }  
+} 
